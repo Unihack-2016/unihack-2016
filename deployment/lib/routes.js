@@ -19,6 +19,7 @@
 	var router    = express.Router();
 
 	var passport = require('passport');
+	var db       = require('./../../lib/db.js'); 
 	
 	
 /* ----------------------------------------------------------------
@@ -64,6 +65,22 @@
     app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
+    });
+
+    app.get('/profile/:id', function(req, res) {
+    	var slug = req.params.id;
+			db.end_user.findById(slug, function(err, user) {
+				if(err) {
+					throw err;
+				}
+
+				if(user) {
+					res.send(user);
+				} else {
+					res.send(404);
+				}
+
+			});
     });
 
 		router.route('/settings')
