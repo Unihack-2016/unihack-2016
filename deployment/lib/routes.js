@@ -82,7 +82,7 @@
 
 					if(user) {
 						res.locals.user = user;
-						res.render(page.template);
+						res.render('profile');
 					} else {
 						res.send(404);
 					}
