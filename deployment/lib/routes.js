@@ -81,7 +81,8 @@
 					}
 
 					if(user) {
-						res.send(user);
+						res.locals.user = user;
+						res.render(page.template);
 					} else {
 						res.send(404);
 					}
