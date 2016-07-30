@@ -6,11 +6,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="header__nav">
-					<h1 class="nav__title">
-						Unihack
-					</h1>
+					<a href="/" class="nav__title">Goalie<a>
+          <a class="nav__item" href="#">Start Goal</a>
           {% if user %}
-  					<a href="/profile/{{user._id}}" class="nav__item">
+  					<a href="/profile/{{user._id}}" class="nav__auth">
   						Welcome {{user.name}}
   					</a>
           {% else %}

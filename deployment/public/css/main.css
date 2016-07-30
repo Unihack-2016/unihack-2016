@@ -1660,11 +1660,39 @@ body {
   background-image: url("../img/bg.jpg");
   background-size: cover;
 }
+.main {
+  padding: 30px;
+}
+.main__title {
+  margin: 10px 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.card {
+  background-color: #FFF;
+  border: #EEE solid 1px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.card__title {
+  text-align: center;
+  padding: 15px 10px;
+  margin: 0;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: #EEE solid 1px;
+}
+.card__description {
+  padding: 20px 10px;
+}
 h1,
 h2,
 h3,
 h4,
-p {
+p,
+a {
   font-family: "Karla";
 }
 .header__nav {
@@ -1695,41 +1723,22 @@ p {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
+  color: #000;
 }
 .header__nav .nav__item {
+  float: left;
+  display: inline-block;
+  font-size: 20px;
+  padding-left: 15px;
+  color: #000;
+}
+.header__nav .nav__auth {
   display: inline-block;
   float: right;
+  color: #000;
 }
-.main {
-  padding: 30px;
-}
-.main__title {
-  margin: 10px 0;
-  margin-bottom: 20px;
-  font-weight: 700;
-  text-align: center;
-}
-.card {
-  background-color: #FFF;
-  border: #EEE solid 1px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-.card__title {
-  text-align: center;
-  padding: 15px 10px;
-  margin: 0;
-  width: 100%;
-  font-size: 22px;
-  font-weight: 700;
-  border-bottom: #EEE solid 1px;
-}
-.card__description {
-  padding: 20px 10px;
-}
-navbar-brand {
-  text-shadow: #00b3ee;
-  text-underline-color: red;
+textarea {
+  resize: none;
 }
 .callout {
   padding: 40px 0;

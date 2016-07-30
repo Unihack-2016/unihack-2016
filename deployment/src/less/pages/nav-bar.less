@@ -1,4 +1,34 @@
-navbar-brand{
-  text-shadow: #00b3ee;
-  text-underline-color: red;
+
+h1,h2,h3,h4,p,a {
+	font-family: "Karla";
+}
+
+.header {
+	&__nav {
+		padding:10px 0;
+		border-bottom:#B8B3AF solid 1px;
+
+		.clearfix();
+
+		.nav__title {
+			float:left;
+			display:inline-block;
+			margin:0;
+			font-size: 20px;
+			font-weight:700;
+      color: #000;
+		}
+    .nav__item {
+			float:left;
+			display:inline-block;
+			font-size: 20px;
+      padding-left: 15px;
+      color: #000;
+		}
+		.nav__auth {
+			display:inline-block;
+			float:right;
+      color: #000;
+		}
+	}
 }

@@ -3,7 +3,7 @@
 
 /* ----------------------------------------------------------------
  * routes.js
- * 
+ *
  * Contains all app routes
  * ---------------------------------------------------------------- */
 
@@ -11,7 +11,7 @@
 (function() {
 
 	'use strict';
-	
+
 	var express   = require('express');
 	var _         = require('underscore');
 	var shortid   = require('shortid');
@@ -21,8 +21,8 @@
 	var passport = require('passport');
 	var db       = require('./../../lib/db.js');
 	var mongoose = require('mongoose');
-	
-	
+
+
 /* ----------------------------------------------------------------
  * $routes
  * ---------------------------------------------------------------- */
@@ -80,9 +80,85 @@
 						throw err;
 					}
 
+					// var goals = [
+					// 	{
+					// 		title : 'zz',
+					// 		description : 'abc',
+					// 		date_created : 'asd',
+					// 		date_completed : 'asd',
+					// 		status: 1,
+					// 		boolean: true,
+					// 		comments : []
+					// 	}
+					// ];
+					var goals = [
+						{
+							title : 'zz',
+							description : 'abc',
+							time_created : 'zxyas'
+						}
+					];
+
 					if(user) {
 						res.locals.user = user;
+						res.locals.goals = goals;
 						res.render('profile');
+					} else {
+						res.send(404);
+					}
+
+				});
+			}
+    });
+
+		app.get('/goal/:id', function(req, res) {
+    	var gg = req.params.id;
+
+    	if(!mongoose.Types.ObjectId.isValid(gg)) {
+    		res.send(401);
+    	} else {
+
+				db.end_user.findById(gg, function(err, goal) {
+					if(err) {
+						throw err;
+					}
+
+					var comments = [
+						{
+							name : 'zz',
+							comment : 'blah',
+							date_created : 'asd'
+						}
+					];
+
+					if(goal) {
+						res.locals.goal = goal;
+						res.locals.comments = comments;
+						res.render('goal');
+					} else {
+						res.send(404);
+					}
+
+				});
+			}
+    });
+
+
+		app.get('/comment/:id', function(req, res) {
+    	var blob = req.params.id;
+
+    	if(!mongoose.Types.ObjectId.isValid(blob)) {
+    		res.send(401);
+    	} else {
+
+				db.end_user.findById(blob, function(err, comment) {
+					if(err) {
+						throw err;
+					}
+
+					if(comment) {
+						res.locals.comment = comment;
+						res.render('/goals');
 					} else {
 						res.send(404);
 					}
@@ -98,5 +174,5 @@
 
 		return router;
 	}
-	
+
 })();
