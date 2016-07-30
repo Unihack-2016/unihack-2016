@@ -19,6 +19,7 @@
 	var router    = express.Router();
 
 	var passport = require('passport');
+	var db       = require('./../../lib/db.js'); 
 	
 	
 /* ----------------------------------------------------------------
@@ -57,7 +58,7 @@
 
     app.get('/auth/facebook/callback',
     passport.authenticate('facebook-login', {
-        successRedirect : '/?login=true',
+        successRedirect : '/',
         failureRedirect : '/'
     }));
 
@@ -65,6 +66,22 @@
         req.logout();
         res.redirect('/');
     });
+
+    /*app.get('/profile/:id', function(req, res) {
+    	var slug = req.params.id;
+			db.end_user.findById(slug, function(err, user) {
+				if(err) {
+					throw err;
+				}
+
+				if(user) {
+					res.send(user);
+				} else {
+					res.send(404);
+				}
+
+			});
+    });*/
 
 		router.route('/settings')
 			.all(handler.auth)
