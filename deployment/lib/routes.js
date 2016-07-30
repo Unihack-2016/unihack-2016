@@ -157,10 +157,10 @@
 						throw err;
 					}
 
-
 					var goal_comment = new db.goal_comment();
 					var date_created = req.body.date_created;
 					goal_comment.date_completed = moment().add(date_completed, 'h');
+					
 
 					goal_comment.save(function(err) {
 					if (err)

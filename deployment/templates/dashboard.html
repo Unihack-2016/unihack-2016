@@ -5,6 +5,7 @@
 <head>
 		<link rel="stylesheet" href="/css/main.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 
@@ -46,7 +47,7 @@
 
 			        // unneeded...
 			        win.resize(function(){
-			            var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
+			            var fontSize = Math.max(Math.min(win.width() / (1.25 * 7.5), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
 
 			            foo.css({
 			                fontSize: fontSize * .33 + 'px'
