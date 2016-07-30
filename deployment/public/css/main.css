@@ -1737,8 +1737,43 @@ a {
   float: right;
   color: #000;
 }
-textarea {
-  resize: none;
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  font-family: "Karla";
+}
+.panel .row {
+  padding: 0 12%;
+}
+.panel .row h1 {
+  padding: 10px 0;
+}
+.form-group {
+  padding: 0 28%;
+}
+.form-group-btn {
+  padding-left: 35%;
+}
+.card {
+  background-color: #FFF;
+  border: #EEE solid 1px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+.card__title {
+  text-align: center;
+  padding: 15px 10px;
+  margin: 0;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: #EEE solid 1px;
+}
+.card__description {
+  padding: 20px 10px;
 }
 .callout {
   padding: 40px 0;
