@@ -29,6 +29,7 @@
     "express-session": "^1.13.0",
     "moment": "^2.13.0",
     "mongoose": "^4.4.20",
+    "mongoose-paginate": "^5.0.0",
     "morgan": "^1.6.1",
     "nunjucks": "^2.4.2",
     "passport": "^0.3.2",
