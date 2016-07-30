@@ -39,13 +39,13 @@ module.exports = function(passport, app) {
 		callbackURL     : 'http://unihack-app.herokuapp.com/auth/facebook/callback'
 	},
 	function(token, refreshToken, profile, done) {
-
+		console.log(token, refreshToken, profile);
 		// asynchronous
 		process.nextTick(function() {
 
 			// find the user in the database based on their facebook id
 			db.end_user.findOne({ 'facebook_id' : profile.id }, function(err, user) {
-
+				console.log(profile);
 			// if there is an error, stop everything and return that
 			// ie an error connecting to the database
 			if (err)
