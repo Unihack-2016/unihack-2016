@@ -72,6 +72,14 @@
  					type    : String,
  					fieldType : 'text'
  				},
+ 				facebook_id : {
+ 					type : String,
+ 					fieldType : 'text'
+ 				},
+ 				facebook_token : {
+ 					type : String,
+ 					fieldType : 'text'
+ 				},
  				password : {
  					type : String,
  					default : '',
