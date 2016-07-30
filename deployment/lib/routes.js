@@ -21,7 +21,8 @@
 	var passport = require('passport');
 	var db       = require('./../../lib/db.js');
 	var mongoose = require('mongoose');
-	var moment   = require('moment');
+	var moment = require('moment-timezone');
+	moment().tz("Australia/Melbourne").format();
 
 
 /* ----------------------------------------------------------------
@@ -112,38 +113,58 @@
 			}
     });
 
-		app.get('/goal/:id', function(req, res) {
-    	var gg = req.params.id;
+    app.post('/profile/:id', function(req, res) {
+    	var slug = req.params.id;
 
-    	if(!mongoose.Types.ObjectId.isValid(gg)) {
+    	if(!mongoose.Types.ObjectId.isValid(slug)) {
     		res.send(401);
     	} else {
 
-				db.end_user.findById(gg, function(err, goal) {
-					if(err) {
-						throw err;
-					}
+    		var goal_comment = new db.goal_comment();
+    		goal_comment.save(function(err, result) {
+    			var comment_id = result.id;
 
-					var comments = [
-						{
-							name : 'zz',
-							comment : 'blah',
-							date_created : 'asd'
-						}
-					];
+    			// Create a goal
+    			var goal = new db.goal();
+    			goal.title = req.body.name;
+    			goal.description = req.body.description;
+    			goal.bounty = parseInt(req.body.bounty);
+    			goal.date_closing = moment().add(req.body.hours, 'h');
+    			goal.comment_id = comment_id;
+    			goal.author = slug;
 
-					if(goal) {
+    			goal.save(function(err, res) {
+    				if(err) {
+    					throw err;
+    				}
+
+    				res.redirect('/');
+    			});
+
+    		});
+			}
+    });
+
+		app.get('/goal/:id', function(req, res) {
+    	var slug = req.params.id;
+
+    	if(!mongoose.Types.ObjectId.isValid(slug)) {
+    		res.send(401);
+    	} else {
+    		db.goal.findById(slug, function(err, goal) {
+    			if(err) {
+    				throw err;
+    			}
+
+    			if(goal) {
 						res.locals.goal = goal;
-						res.locals.comments = comments;
 						res.render('goal');
 					} else {
 						res.send(404);
 					}
-
-				});
-			}
+    		});
+    	}
     });
-
 
 		app.get('/comment/:id', function(req, res) {
     	var blob = req.params.id;
@@ -157,10 +178,77 @@
 						throw err;
 					}
 
+<<<<<<< HEAD
 					var goal_comment = new db.goal_comment();
 					var date_created = req.body.date_created;
 					goal_comment.date_completed = moment().add(date_completed, 'h');
 					
+=======
+					
+					/* DATE STUFF */
+					/**
+					 * Created by David on 31/07/2016.
+					 */
+					var moment = require('moment');
+
+					// to find end date
+					function daysInMonth(month,year) {
+						return new Date(year, month, 0).getDate();
+					}
+
+					var today = new Date();
+					var dd = parseInt(today.getDate());
+					var mm = parseInt(today.getMonth())+1;
+					var yyyy = parseInt(today.getFullYear());
+
+					var goal_hours = 10141;
+
+					var today_hours = moment().format("H");
+
+					var total_hours = parseInt(goal_hours) + parseInt(today_hours);
+					var days_to_add;
+
+					if (total_hours > 24) {
+						if (total_hours % 24 == 0) {
+							// fits perfectly
+							days_to_add = total_hours / 24;
+						} else {
+							// doesn't fit perfectly
+							days_to_add = Math.floor(total_hours / 24);
+							total_hours = total_hours % 24;
+						}
+
+						dd += days_to_add;
+						if (dd > daysInMonth(mm, yyyy)){
+							var temp = dd;
+							dd = Math.floor(dd/daysInMonth(mm, yyyy));
+							mm += Math.floor(temp/daysInMonth(mm, yyyy));
+							if (mm > 12){		// to do, consider leap years
+								var temp = mm;
+								mm = mm%12;
+								yyyy += Math.floor(temp/12);
+
+							}
+						}
+					} else {}
+
+					var goal_end_date = new Date(yyyy.toString()+'/'+mm.toString()+'/'+dd.toString());	
+					// DOESNT HAVE HOURS ^
+					
+					//total_hours);
+					// yyyy, mm, dd, total_hours);
+					
+					//var date_created = req.body.date_created;
+					
+					//goal_comment.date_completed = moment().add(date_completed, 'h');
+					
+					// to find end date
+					/* DATE STUFF */
+
+
+					console.log(goal_end_date);
+					console.log(today);
+>>>>>>> 5af9f2f107f01b4cbd56d371b0df347b17513b32
 
 					goal_comment.save(function(err) {
 					if (err)

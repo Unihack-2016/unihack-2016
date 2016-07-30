@@ -51,6 +51,10 @@
  					type : String,
  					fieldType : 'text'
  				},
+ 				bounty : {
+ 					type : Number,
+ 					fieldType : 'text'
+ 				},
  				author : {
  					type : String
  				}
