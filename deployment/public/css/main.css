@@ -1839,7 +1839,7 @@ a {
   padding-top: 0;
 }
 .panel .panel-body .list-group-item {
-  position: relative;
+  float: left;
   display: block;
   font-size: 12px;
 }

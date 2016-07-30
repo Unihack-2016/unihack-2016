@@ -21,6 +21,7 @@
 	var passport = require('passport');
 	var db       = require('./../../lib/db.js');
 	var mongoose = require('mongoose');
+	var moment   = require('moment');
 
 
 /* ----------------------------------------------------------------
@@ -155,6 +156,18 @@
 					if(err) {
 						throw err;
 					}
+
+
+					var goal_comment = new db.goal_comment();
+					var date_created = req.body.date_created;
+					goal_comment.date_completed = moment().add(date_completed, 'h');
+
+					goal_comment.save(function(err) {
+					if (err)
+					throw err;
+
+					// if successful, do something..
+					});
 
 					if(comment) {
 						res.locals.comment = comment;
