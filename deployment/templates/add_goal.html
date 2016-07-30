@@ -1,11 +1,55 @@
-<!DOCTYPE html>
+{% include "./partials/head.html" %}
+
+<!-- Add a goal -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add a goal</title>
-    <h1>Add a goal</h1>
+
 </head>
+
 <body>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1>Add a goal</h1>
+
+                <form id="goal_form"> <!-- handler -->
+
+                    <!-- name of the goal -->
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="eg: 9am Gym">
+                    </div>
+
+                    <!-- description of the goal -->
+                    <div class="form-group">
+                        <label for="description">Description</label><br>
+                        <textarea class="form-control" rows="5" id="description" >eg: Go the gym 9am Monday</textarea>
+                    </div>
+
+                    <!-- proposed bounty for the goal -->
+                    <div class="form-group">
+                        <label>Proposed bounty</label>
+                        <input type="text" class="form-control" placeholder="eg: 100">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-default">Submit</button>
+
+                </form>
+                <div class="col-md-2"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
