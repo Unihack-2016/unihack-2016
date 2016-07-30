@@ -1657,7 +1657,7 @@ body.about .box {
 body {
   min-height: 100vh;
   font-family: "Source Code Pro";
-  background-image: url("../img/bg.jpeg");
+  background-image: url("../img/bg.jpg");
   background-size: cover;
 }
 h1,
