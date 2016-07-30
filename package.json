@@ -29,6 +29,7 @@
     "express-handlebars": "^2.0.1",
     "express-session": "^1.13.0",
     "moment": "^2.13.0",
+    "moment-timezone": "^0.5.5",
     "mongoose": "^4.4.20",
     "mongoose-paginate": "^5.0.0",
     "mongoose-url-slugs": "^0.2.1",
