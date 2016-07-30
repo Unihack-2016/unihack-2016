@@ -19,7 +19,7 @@
         var win = $(window),
             foo = $('#typer');
 
-        foo.typer(["Why don't you join these goals?"]);
+        foo.typer(['Why dont you join these goals?', 'Cmon you gotta learn how to swim!', 'Prehaps learn how to do paragliding?']);
 
         // unneeded...
         win.resize(function(){
@@ -46,7 +46,8 @@
 </head>
 
 <body class="index">
-
+	{% include "./partials/head.html" %}
+	{% include "./partials/nav-bar.html" %}
 	<section class="main">
 		<div class="container">
 			<div class="row">
