@@ -1,0 +1,16 @@
+
+
+# Server settings
+local: 
+ port: 80
+ url : localhost
+
+server:
+ port: 80
+ url : 127.0.0.1
+
+paths:
+  backend: /zzz
+
+db:
+ host: localhost
