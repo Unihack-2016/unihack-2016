@@ -1,17 +1,23 @@
-
+{% include "./partials/head.html" %}
+{% include "./partials/nav-bar.html" %}
 <!-- Add a goal -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
     <!-- + {{fields.page_content.name}} ? want the page to be called Goal: goal_name-->
     <link rel="stylesheet" href="/css/main.css">
 
 </head>
 
 <body>
+<<<<<<< HEAD
 {% include "./partials/nav-bar.html" %}
 <div class="panel-default">
+=======
+
+<div class="panel panel-default">
+
+>>>>>>> 04d3e697d1396a9d271c87953bea671b7457abdb
     <div class="panel-heading">
     </div>
     <div class="panel">
@@ -19,24 +25,32 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
+<<<<<<< HEAD
                     <div class="square img"></div>
                     <h3 class ="panel-title">{{user.name}}</h3>
+=======
+>>>>>>> 04d3e697d1396a9d271c87953bea671b7457abdb
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-3">
+                            <h1>Profile</h1>
+
 
                             <ul class="list-group">
-                                <li class="list-group-item">Joined {{user.date_created}}</li>
+                                <li class="list-group-item">Name: {{user.name}}</li>
+                                <li class="list-group-item">Joined: {{user.date_created}}</li>
                             </ul>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-5">
                             <ul>
                                 {% for goal, goals in user.goals_created %}
                                 <li>{{ goal.title }}: {{ goal.status }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
+                        <div class="col-md-2"></div>
                                     <!--
                                     date_created  : Date,
                                     goals_created : {

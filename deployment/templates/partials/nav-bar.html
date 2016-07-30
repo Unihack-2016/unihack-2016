@@ -7,16 +7,19 @@
 			<div class="col-md-12">
 				<nav class="header__nav">
 					<a href="/" class="nav__title">Goalie<a>
-          <a class="nav__item" href="#">Start Goal</a>
-          {% if user %}
-  					<a href="/profile/{{user._id}}" class="nav__auth">
-  						Welcome {{user.name}}
-  					</a>
-          {% else %}
-            <a href="/auth/facebook">Login</a>
-          {% endif %}
+
+						<a class="nav__item" href="/profile"> | My Profile</a>
+
+						<a class="nav__item" href="/add_goal_test"> | Start Goal</a>
+
+          				{% if user %}
+  						<a href="/profile/{{user._id}}" class="nav__auth">
+  							Welcome {{user.name}}
+  						</a>
+         				 {% else %}
+         				   <a href="/auth/facebook">Login</a>
+						 {% endif %}
 				</nav>
-			</div>
 		</div>
 	</div>
 </header>
