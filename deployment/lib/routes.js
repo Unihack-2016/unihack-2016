@@ -21,7 +21,8 @@
 	var passport = require('passport');
 	var db       = require('./../../lib/db.js');
 	var mongoose = require('mongoose');
-	var moment   = require('moment');
+	var moment = require('moment-timezone');
+	moment().tz("Australia/Melbourne").format();
 
 
 /* ----------------------------------------------------------------
@@ -112,38 +113,58 @@
 			}
     });
 
-		app.get('/goal/:id', function(req, res) {
-    	var gg = req.params.id;
+    app.post('/profile/:id', function(req, res) {
+    	var slug = req.params.id;
 
-    	if(!mongoose.Types.ObjectId.isValid(gg)) {
+    	if(!mongoose.Types.ObjectId.isValid(slug)) {
     		res.send(401);
     	} else {
 
-				db.end_user.findById(gg, function(err, goal) {
-					if(err) {
-						throw err;
-					}
+    		var goal_comment = new db.goal_comment();
+    		goal_comment.save(function(err, result) {
+    			var comment_id = result.id;
 
-					var comments = [
-						{
-							name : 'zz',
-							comment : 'blah',
-							date_created : 'asd'
-						}
-					];
+    			// Create a goal
+    			var goal = new db.goal();
+    			goal.title = req.body.name;
+    			goal.description = req.body.description;
+    			goal.bounty = parseInt(req.body.bounty);
+    			goal.date_closing = moment().add(req.body.hours, 'h');
+    			goal.comment_id = comment_id;
+    			goal.author = slug;
 
-					if(goal) {
+    			goal.save(function(err, res) {
+    				if(err) {
+    					throw err;
+    				}
+
+    				res.redirect('/');
+    			});
+
+    		});
+			}
+    });
+
+		app.get('/goal/:id', function(req, res) {
+    	var slug = req.params.id;
+
+    	if(!mongoose.Types.ObjectId.isValid(slug)) {
+    		res.send(401);
+    	} else {
+    		db.goal.findById(slug, function(err, goal) {
+    			if(err) {
+    				throw err;
+    			}
+
+    			if(goal) {
 						res.locals.goal = goal;
-						res.locals.comments = comments;
 						res.render('goal');
 					} else {
 						res.send(404);
 					}
-
-				});
-			}
+    		});
+    	}
     });
-
 
 		app.get('/comment/:id', function(req, res) {
     	var blob = req.params.id;
