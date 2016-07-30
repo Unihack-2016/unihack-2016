@@ -67,7 +67,7 @@
         res.redirect('/');
     });
 
-    app.get('/profile/:id', function(req, res) {
+    /*app.get('/profile/:id', function(req, res) {
     	var slug = req.params.id;
 			db.end_user.findById(slug, function(err, user) {
 				if(err) {
@@ -81,7 +81,7 @@
 				}
 
 			});
-    });
+    });*/
 
 		router.route('/settings')
 			.all(handler.auth)
