@@ -5,8 +5,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add a goal</title>
-
 
 </head>
 
@@ -18,39 +16,51 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-2"></div>
+
             <div class="col-md-8">
-                <h1>Add a goal</h1>
 
-                <form id="goal_form"> <!-- handler -->
+                <div class="card">
+                    <h1 class="card__title">
+                        Add a goal
+                    </h1>
 
-                    <!-- name of the goal -->
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="eg: 9am Gym" name="name">
-                    </div>
+                    <form id="goal_form"> <!-- handler -->
 
-                    <!-- description of the goal -->
-                    <div class="form-group">
-                        <label for="description">Description</label><br>
-                        <textarea class="form-control" rows="5" id="description" placeholder="eg: Go the gym 9am Monday" name="description"></textarea>
-                    </div>
+                        <!-- name of the goal -->
+                        <div class="col-md-1"></div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name</label><br>
+                            <input type="text" class="form-control" placeholder="eg: 9am Gym" name="name">
+                        </div>
 
-                    <!-- proposed bounty for the goal -->
-                    <div class="form-group">
-                        <label>Proposed bounty</label>
-                        <input type="text" class="form-control" placeholder="eg: 100" name="bounty">
-                    </div>
+                        <!-- description of the goal -->
+                        <div class="form-group">
+                            <label for="description">Description</label><br>
+                            <textarea class="form-control" rows="5" id="description" placeholder="eg: Go the gym 9am Monday" name="description"></textarea>
+                        </div>
 
-                    <!-- time limit for the goal -->
-                    <div class="form-group">
-                        <label>Time (max)</label>
-                        <input type="text" class="form-control" placeholder="eg: 10 hours" name="time">
-                    </div>
+                        <!-- proposed bounty for the goal -->
+                        <div class="form-group">
+                            <label>Proposed bounty</label>
+                            <input type="text" class="form-control" placeholder="eg: 100" name="bounty">
+                        </div>
+
+                        <!-- time limit for the goal -->
+                        <div class="form-group">
+                            <label>Time (max)</label>
+                            <input type="text" class="form-control" placeholder="eg: 10 hours" name="time">
+                        </div>
 
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
 
-                </form>
+                    </form>
+
+                </div>
+
+
                 <div class="col-md-2"></div>
 
             </div>
