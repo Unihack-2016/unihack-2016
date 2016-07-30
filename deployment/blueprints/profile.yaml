@@ -1,0 +1,13 @@
+template : profile
+
+fields:
+
+  page_title:
+    label: Page title
+    type: text
+    description: Page heading titles
+
+  page_content:
+    label: Page content
+    type: text
+    description: Page content
