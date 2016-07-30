@@ -55,6 +55,9 @@ module.exports = function(passport, app) {
 			if (user) {
 			return done(null, user); // user found, return that user
 			} else {
+			if(!profile.emails) {
+				return done(err);
+			}
 			// if there is no user found with that facebook id, create them
 			var newUser            = new db.end_user();
 
