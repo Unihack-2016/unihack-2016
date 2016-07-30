@@ -13,6 +13,9 @@
 	
 	module.exports = function(cms, app, db) {
 
+
+		var routes = require('./lib/routes.js');
+
 		var goal = {
 
 			name      : 'goal',   // Will be used for creating the database
@@ -123,6 +126,8 @@
 		cms.defineType(end_user);
 		cms.defineType(goal);
 		cms.defineType(goal_comment);
+
+		app.use(routes(app));
 	}
 
 })();

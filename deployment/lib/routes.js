@@ -4,7 +4,7 @@
 /* ----------------------------------------------------------------
  * routes.js
  * 
- * Contains all routes
+ * Contains all app routes
  * ---------------------------------------------------------------- */
 
 
@@ -14,66 +14,53 @@
 	
 	var express   = require('express');
 	var _         = require('underscore');
-	var appConfig = require('../config.js');
-	var db        = require('./db.js');
-	var backend   = require('./backend.js');
-	
-	var app = express();
-	
-	var globals = appConfig.vars;
-	appConfig.setup(app, express);
-	
-	var regex = new RegExp("(((http:\/\/www)|(https:\/\/www)|(http:\/\/)|(https:\/\/)|(www))[-a-zA-Z0-9@:%_\+.~#?&//=]+)\.(jpg|jpeg|gif|png|bmp|tiff|tga|svg)");
-	
-	function parseUrl(url) {
-		if(regex.test(url)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	
-	app.use(function (req, res, next) {
-		var result = parseUrl(req.url);
-		if(result) {
-			res.render('app',{
-				imageUrl : req.url.substr(1)
-			});
-		} else {
-			next();
-		}
-	});
+	var shortid   = require('shortid');
+
+	var router    = express.Router();
+
+	var passport  = require('passport');
 	
 	
 /* ----------------------------------------------------------------
  * $routes
  * ---------------------------------------------------------------- */
-	// GET requests
-	app.get('/', function(req, res) {
-		res.render('index');
-	});
-	
-	app.get('/app', function(req, res) {
-		res.render('app');
-	});
-	
-	app.get('/about', function(req, res) {
-		res.render('about');
-	});
+	module.exports = function(app) {
 
-	app.get('/holoverse', function(req, res) {
-		res.render('holoverse');
-	});
+		require('./passport')(passport, app);
 
-	app.use('/backend', backend);
-	
+		// -------- Backend handler -------- //
+		var handler = {
+			get : {},
+			post : {}
+		};
 
-	
-	app.use(express.static(__dirname + '/../public'));
-	console.log(__dirname);
-	
-	// Starts the express app
-	app.listen(globals.port, globals.host);
+
+		/**
+		 * Renders dashboard
+		 */
+		handler.get.dashboard = function(req, res) {
+			res.send('zz');
+		};
+
+		
+		handler.auth = function(req, res, next) {
+			if(req.isAuthenticated()) {
+				return next();
+			} else {
+				res.sendStatus(401);
+			}
+		}
+
+
+		// -------- Backend routes -------- //
+    app.get('/auth/facebook', passport.authenticate('facebook-login', { scope : 'email' }));
+
+		router.route('/settings')
+			.all(handler.auth)
+			.get(handler.get.dashboard);
+		// -------- Backend routes END -------- //
+
+		return router;
+	}
 	
 })();
