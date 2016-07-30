@@ -1,0 +1,38 @@
+<!-- Books home page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add goal</title>
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form ng-submit="addBook()"> <!-- handler -->
+                    <!-- ng-model instead of name as it binds the socpe to the view, also use book.title not just title -->
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Buy URL</label>
+                        <input type="text" class="form-control" ng-model="book.buy_url" placeholder="Buy URL">
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "unihack-2016",
+  "version": "1.0.0",
+  "description": "unihack 2016",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manan057/unihack-2016.git"
+  },
+  "author": "Team 404",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manan057/unihack-2016/issues"
+  },
+  "homepage": "https://github.com/manan057/unihack-2016#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "nunjucks": "^2.4.2"
+  }
+}
