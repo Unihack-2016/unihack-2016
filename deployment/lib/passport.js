@@ -39,13 +39,12 @@ module.exports = function(passport, app) {
 		callbackURL     : 'http://unihack-app.herokuapp.com/auth/facebook/callback'
 	},
 	function(token, refreshToken, profile, done) {
-		console.log(token, refreshToken, profile);
+		console.log(profile);
 		// asynchronous
 		process.nextTick(function() {
 
 			// find the user in the database based on their facebook id
 			db.end_user.findOne({ 'facebook_id' : profile.id }, function(err, user) {
-				console.log(profile);
 			// if there is an error, stop everything and return that
 			// ie an error connecting to the database
 			if (err)
@@ -64,7 +63,7 @@ module.exports = function(passport, app) {
 			// set all of the facebook information in our user model
 			newUser.facebook_id    = profile.id; // set the users facebook id                   
 			newUser.facebook_token = token; // we will save the token that facebook provides to the user                    
-			newUser.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
+			newUser.name  = profile.displayName;//profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
 			newUser.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 
 			// save our user to the database
