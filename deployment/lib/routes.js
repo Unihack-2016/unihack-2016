@@ -42,7 +42,7 @@
 			res.send('zz');
 		};
 
-		
+
 		handler.auth = function(req, res, next) {
 			if(req.isAuthenticated()) {
 				return next();
@@ -54,6 +54,17 @@
 
 		// -------- Backend routes -------- //
     app.get('/auth/facebook', passport.authenticate('facebook-login', { scope : 'email' }));
+
+    app.get('/auth/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect : '/?login=true',
+        failureRedirect : '/'
+    }));
+
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
 
 		router.route('/settings')
 			.all(handler.auth)

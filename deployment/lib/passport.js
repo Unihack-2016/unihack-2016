@@ -36,7 +36,7 @@ module.exports = function(passport, app) {
 		// pull in our app id and secret from our auth.js file
 		clientID        : '304773096539239',
 		clientSecret    : '4b8545c1a6327c1b4727cc4d7f39f881',
-		callbackURL     : 'http://unihack-app.herokuapp.com?login=true'
+		callbackURL     : 'http://unihack-app.herokuapp.com/auth/facebook/callback'
 	},
 	function(token, refreshToken, profile, done) {
 
