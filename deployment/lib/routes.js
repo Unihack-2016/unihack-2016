@@ -53,7 +53,7 @@
 
 
 		// -------- Backend routes -------- //
-    app.get('/auth/facebook', passport.authenticate('facebook-login', { scope : 'email' }));
+    app.get('/auth/facebook', passport.authenticate('facebook-login', { scope : ['email'] }));
 
     app.get('/auth/facebook/callback',
     passport.authenticate('facebook-login', {
