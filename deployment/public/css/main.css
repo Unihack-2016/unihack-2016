@@ -1,9 +1,9 @@
 /* ----------------------------------------------------------------
  * lightgrid.less
- * 
+ *
  * Made by shash7, licensed under the MIT license
  * https://github.com/shash7/lightgrid
- * 
+ *
  * This will compile into lightgrid.css
  * ---------------------------------------------------------------- */
 /*!
@@ -12,6 +12,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Karla:400,700,400italic);
 @media print {
   *,
   *:before,
@@ -1598,145 +1599,6 @@ p {
 .icon-arrow-right:before {
   content: "\e901";
 }
-body.index .banner {
-  min-height: 500px;
-  height: 60vh;
-  position: relative;
-  background-image: url('/img/banner.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-color: #F97A0E;
-  overflow: hidden;
-  -webkit-box-shadow: inset 0 0 128px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0 0 128px 1px rgba(0, 0, 0, 0.1);
-}
-body.index .banner__inner {
-  padding: 100px 0;
-}
-body.index .banner__inner p {
-  display: inline-block;
-  color: #FFF;
-  font-size: 1.6em;
-  font-style: italic;
-  margin: 5px 0;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-body.index .banner__inner h1 {
-  margin: 0;
-  color: #FFF;
-  font-size: 3.2em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-body.index .banner > div {
-  position: relative;
-  z-index: 20;
-}
-body.index .banner:before {
-  content: '';
-  z-index: 5;
-  position: absolute;
-  top: 0px;
-  right: 20%;
-  width: 600px;
-  height: 600px;
-  opacity: 0.4;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.5+0,0+74 */
-  /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 74%, rgba(255, 255, 255, 0) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 74%, rgba(255, 255, 255, 0) 100%);
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 74%, rgba(255, 255, 255, 0) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-}
-body.index .banner:after {
-  content: '';
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/img/noise.png');
-  background-repeat: repeat;
-}
-@media screen and (max-width: 992px) {
-  body.index .banner {
-    height: auto;
-    min-height: 0;
-  }
-  body.index .banner__inner {
-    padding-bottom: 50px;
-  }
-}
-body.index .main {
-  padding: 60px 0;
-  background-color: #F9F6F0;
-  -webkit-box-shadow: inset 0 8px 32px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 8px 32px 1px rgba(0, 0, 0, 0.2);
-}
-body.index .main__inner {
-  padding: 40px;
-  background-color: #FFF;
-  border-bottom: #EEE solid 1px;
-}
-body.index .main__sidebar .sidebar__item {
-  display: block;
-  padding: 10px;
-  font-family: 'Hind', Verdana, sans-serif;
-  text-transform: uppercase;
-  color: #666;
-  border-bottom: #DDD dashed 2px;
-}
-body.index .main__sidebar .sidebar__item span {
-  display: block;
-  font-family: Georgia, serif;
-  font-size: 0.8em;
-  text-transform: initial;
-  letter-spacing: 1px;
-}
-body.index .main__sidebar .sidebar__item:hover {
-  background-color: #FFF;
-}
-body.index .main__sidebar .sidebar__item:last-child {
-  border-bottom: none;
-}
-body.index .unslider {
-  width: 100%;
-  margin: 100px 0;
-  overflow: visible;
-}
-body.index .unslider .unslider-arrow,
-body.index .unslider .unslider-nav {
-  display: none;
-}
-body.index .unslider.unslider-horizontal {
-  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
-}
-body.index .unslider:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-}
-body.index .unslider li {
-  line-height: 0;
-}
-body.index .unslider-img {
-  width: 100%;
-  height: 48.2%;
-}
-@media screen and (max-width: 992px) {
-  body.index .unslider {
-    margin-top: 10px;
-    margin-bottom: 40px;
-  }
-}
 body.about {
   /*
 	You can also write the code below as
@@ -1791,6 +1653,77 @@ body.about .box {
   min-height: 100px;
   margin-top: 15px;
   border-radius: 3px;
+}
+body {
+  min-height: 100vh;
+  font-family: "Source Code Pro";
+  background-image: url("../img/bg.jpeg");
+  background-size: cover;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Karla";
+}
+.header__nav {
+  padding: 10px 0;
+  border-bottom: #B8B3AF solid 1px;
+}
+.header__nav:before,
+.header__nav:after {
+  content: " ";
+  display: table;
+}
+.header__nav:after {
+  clear: both;
+}
+.header__nav:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.header__nav:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.header__nav .nav__title {
+  float: left;
+  display: inline-block;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.header__nav .nav__item {
+  display: inline-block;
+  float: right;
+}
+.main {
+  padding: 30px;
+}
+.main__title {
+  margin: 10px 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.card {
+  background-color: #FFF;
+  border: #EEE solid 1px;
+  border-radius: 16px;
+}
+.card__title {
+  text-align: center;
+  padding: 15px 10px;
+  margin: 0;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: #EEE solid 1px;
+}
+.card__description {
+  padding: 20px 10px;
 }
 .callout {
   padding: 40px 0;
@@ -2654,6 +2587,11 @@ body.about .box {
   display: block;
   content: '';
   clear: both;
+}
+.comment__header:after {
+  content: '';
+  clear: both;
+  display: block;
 }
 .comment__avatar {
   display: inline-block;

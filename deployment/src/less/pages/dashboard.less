@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600|Karla:400,700,400italic);
+
+body {
+	min-height:100vh;
+	font-family: "Source Code Pro";
+	// background-color:#FFF9F3;
+  background-image: url("../img/bg.jpeg");
+  background-size: cover;
+}
+
+.clearfix() {
+	&:after {
+		content:'';
+		clear:both;
+		display:block;
+	}
+}
+
+h1,h2,h3,h4 {
+	font-family: "Karla";
+}
+
+.header {
+	&__nav {
+		padding:10px 0;
+		border-bottom:#B8B3AF solid 1px;
+
+		.clearfix();
+
+		.nav__title {
+			float:left;
+			display:inline-block;
+			margin:0;
+			font-size: 20px;
+			font-weight:700;
+		}
+		.nav__item {
+			display:inline-block;
+			float:right;
+		}
+	}
+}
+
+.main {
+	padding:30px;
+	&__title {
+		margin:10px 0;
+		margin-bottom:20px;
+		font-weight:700;
+		text-align:center;
+	}
+}
+
+.card {
+	background-color:#FFF;
+	border:#EEE solid 1px;
+	border-radius:16px;
+
+	&__title {
+		text-align:center;
+		padding:15px 10px;
+		margin:0;
+		width:100%;
+		font-size:22px;
+		font-weight:700;
+		border-bottom:#EEE solid 1px;
+	}
+
+	&__description {
+		padding:20px 10px;
+	}
+}
