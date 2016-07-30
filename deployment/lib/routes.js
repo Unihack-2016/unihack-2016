@@ -178,13 +178,13 @@
 						throw err;
 					}
 
-<<<<<<< HEAD
+
 					var goal_comment = new db.goal_comment();
 					var date_created = req.body.date_created;
 					goal_comment.date_completed = moment().add(date_completed, 'h');
-					
-=======
-					
+
+
+
 					/* DATE STUFF */
 					/**
 					 * Created by David on 31/07/2016.
@@ -232,23 +232,22 @@
 						}
 					} else {}
 
-					var goal_end_date = new Date(yyyy.toString()+'/'+mm.toString()+'/'+dd.toString());	
+					var goal_end_date = new Date(yyyy.toString()+'/'+mm.toString()+'/'+dd.toString());
 					// DOESNT HAVE HOURS ^
-					
+
 					//total_hours);
 					// yyyy, mm, dd, total_hours);
-					
+
 					//var date_created = req.body.date_created;
-					
+
 					//goal_comment.date_completed = moment().add(date_completed, 'h');
-					
+
 					// to find end date
 					/* DATE STUFF */
 
 
 					console.log(goal_end_date);
 					console.log(today);
->>>>>>> 5af9f2f107f01b4cbd56d371b0df347b17513b32
 
 					goal_comment.save(function(err) {
 					if (err)
