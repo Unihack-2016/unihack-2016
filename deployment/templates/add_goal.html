@@ -1,4 +1,4 @@
-{% include "./partials/head.html" %}
+{% include "./partials/nav-bar.html" %}
 
 <!-- Add a goal -->
 <html lang="en">
@@ -24,19 +24,25 @@
                     <!-- name of the goal -->
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="eg: 9am Gym">
+                        <input type="text" class="form-control" placeholder="eg: 9am Gym" name="name">
                     </div>
 
                     <!-- description of the goal -->
                     <div class="form-group">
                         <label for="description">Description</label><br>
-                        <textarea class="form-control" rows="5" id="description" placeholder="eg: Go the gym 9am Monday"></textarea>
+                        <textarea class="form-control" rows="5" id="description" placeholder="eg: Go the gym 9am Monday" name="description"></textarea>
                     </div>
 
                     <!-- proposed bounty for the goal -->
                     <div class="form-group">
                         <label>Proposed bounty</label>
-                        <input type="text" class="form-control" placeholder="eg: 100">
+                        <input type="text" class="form-control" placeholder="eg: 100" name="bounty">
+                    </div>
+
+                    <!-- time limit for the goal -->
+                    <div class="form-group">
+                        <label>Time (max)</label>
+                        <input type="text" class="form-control" placeholder="eg: 10 hours" name="time">
                     </div>
 
 
