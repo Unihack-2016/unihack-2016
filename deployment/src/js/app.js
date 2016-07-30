@@ -1,19 +1,5 @@
 
 
-
-var comments = [
-	{
-		id          : _.uniqueId('comment_'),
-		created     : new Date(),
-		authorEmail : 'shashwat.amin@yahoo.com',
-		authorName  : 'Shash7',
-		comment     : 'Muhahahaaa',
-		x           : 75,
-		y           : 50
-	}
-];
-
-
 (function(window, document) {
 	
 	'use strict';

@@ -138,7 +138,7 @@
     					throw err;
     				}
 
-    				res.redirect('/');
+    				req.redirect('/');
     			});
 
     		});
