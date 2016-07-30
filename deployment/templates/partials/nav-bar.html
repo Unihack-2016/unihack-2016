@@ -2,6 +2,11 @@
 
 <!-- need above to test nav bar -->
 
+{% if user %}
+  /profile/{{user._id}}
+{% else %}
+  Invalid user!
+{% endif %}
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">

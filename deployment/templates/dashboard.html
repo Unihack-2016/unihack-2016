@@ -51,10 +51,29 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class="main__title">
+					<!-- <h1 class="main__title">
 						Why don't you join these goals?
-					</h1>
-					<div id="typer"></div>
+					</h1> -->
+
+					<div id="typer">foo</div>
+					<script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+					<script src='/js/jquery.typer.js'></script>
+			    <script>
+			        var win = $(window),
+			            foo = $('#typer');
+
+			        foo.typer(["Why don't you join these goals?"]);
+
+			        // unneeded...
+			        win.resize(function(){
+			            var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
+
+			            foo.css({
+			                fontSize: fontSize * .33 + 'px'
+			            });
+			        }).resize();
+			    </script>
+					</br>
 				</div>
 			</div>
 		</div>
@@ -63,10 +82,7 @@
 				<div class="col-md-3">
 					<div class="card">
 						<h3 class="card__title">
-						{{user}}
 							Monday morning fitness class
-						}
-						}
 						</h3>
 						<p class="card__description">
 							Meetup at the Caulfield gym to to burn all those calories.
