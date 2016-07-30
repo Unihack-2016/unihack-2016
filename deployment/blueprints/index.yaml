@@ -16,11 +16,3 @@ fields:
   main_content:
     type: texteditor
     label: Main content
-
-  list:
-    type: list
-    label: list
-    fields:
-      item:
-        type: text
-        label : Item

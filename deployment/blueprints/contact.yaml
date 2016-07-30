@@ -11,8 +11,3 @@ fields:
     label: Page content
     type: text
     description: Page content
-
-  - name: content_toggle
-    label: Show content?
-    type: toggle
-    size: 2
