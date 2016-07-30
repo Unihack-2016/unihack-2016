@@ -19,7 +19,8 @@
 	var router    = express.Router();
 
 	var passport = require('passport');
-	var db       = require('./../../lib/db.js'); 
+	var db       = require('./../../lib/db.js');
+	var mongoose = require('./node_modules/mongoose');
 	
 	
 /* ----------------------------------------------------------------
@@ -69,18 +70,24 @@
 
     app.get('/profile/:id', function(req, res) {
     	var slug = req.params.id;
-			db.end_user.findById(slug, function(err, user) {
-				if(err) {
-					throw err;
-				}
 
-				if(user) {
-					res.send(user);
-				} else {
-					res.send(404);
-				}
+    	if(!mongoose.Types.ObjectId.isValid(slug)) {
+    		res.send(401);
+    	} else {
 
-			});
+				db.end_user.findById(slug, function(err, user) {
+					if(err) {
+						throw err;
+					}
+
+					if(user) {
+						res.send(user);
+					} else {
+						res.send(404);
+					}
+
+				});
+			}
     });
 
 		router.route('/settings')
