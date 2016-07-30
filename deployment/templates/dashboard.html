@@ -3,33 +3,12 @@
 <!-- Add a goal -->
 <html lang="en">
 <head>
-		<link href='https://fonts.googleapis.com/css?family=Hind:600,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/main.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider.css">
-
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
 
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js"></script>
-
-		<script src='/js/jquery.typer.js'></script>
-    <script>
-        var win = $(window),
-            foo = $('#typer');
-
-        foo.typer(['Why dont you join these goals?', 'Cmon you gotta learn how to swim!', 'Prehaps learn how to do paragliding?']);
-
-        // unneeded...
-        win.resize(function(){
-            var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
-
-            foo.css({
-                fontSize: fontSize * .8 + 'px'
-            });
-        }).resize();
-    </script>
 
 		<script type="text/javascript">
 		(function() {
@@ -46,7 +25,7 @@
 </head>
 
 <body class="index">
-	{% include "./partials/head.html" %}
+
 	{% include "./partials/nav-bar.html" %}
 	<section class="main">
 		<div class="container">
@@ -55,15 +34,15 @@
 					<!-- <h1 class="main__title">
 						Why don't you join these goals?
 					</h1> -->
-
+					</br>
 					<div id="typer">foo</div>
-					<script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+					</br>
 					<script src='/js/jquery.typer.js'></script>
 			    <script>
 			        var win = $(window),
 			            foo = $('#typer');
 
-			        foo.typer(["Why don't you join these goals?"]);
+			        foo.typer(["Why don't you join these goals?", "C'mon you gotta learn how to swim!", "Prehaps learn paragliding?"]);
 
 			        // unneeded...
 			        win.resize(function(){

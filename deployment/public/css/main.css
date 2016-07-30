@@ -1663,7 +1663,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+p {
   font-family: "Karla";
 }
 .header__nav {
@@ -1712,6 +1713,7 @@ h4 {
   background-color: #FFF;
   border: #EEE solid 1px;
   border-radius: 16px;
+  margin-bottom: 20px;
 }
 .card__title {
   text-align: center;
@@ -1724,6 +1726,10 @@ h4 {
 }
 .card__description {
   padding: 20px 10px;
+}
+navbar-brand {
+  text-shadow: #00b3ee;
+  text-underline-color: red;
 }
 .callout {
   padding: 40px 0;
