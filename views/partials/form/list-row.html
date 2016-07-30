@@ -1,0 +1,14 @@
+
+
+{% for key, field in fields %}
+
+{% set id = 'repeater' | generateId %}
+<div class="list__row" data-id="{{id}}">
+	<div class="list__controls" data-id="{{id}}">
+	&nbsp;
+	</div>
+	<div class="form-row" data-id="{{id}}">
+		{% include 'partials/form/' + field.type + '.html' %}
+	</div>
+</div>
+{% endfor %}

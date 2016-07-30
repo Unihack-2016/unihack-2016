@@ -1,0 +1,21 @@
+
+{% set id = field.name | generateId %}
+<div class="col-{{field.size}}">
+	<label>
+	{{field.label}}
+	</label>
+
+	<div class="onoffswitch">
+		<input type="checkbox" name="fields[]{{field.depth}}[{{field.name}}]" class="onoffswitch-checkbox" id="{{id}}" value=true {% if field.value %}checked{% endif %}>
+		<label class="onoffswitch-label" for="{{id}}">
+			<span class="onoffswitch-inner"></span>
+			<span class="onoffswitch-switch"></span>
+		</label>
+	</div>
+
+	{% if field.description %}
+	<span class="form-description">
+	{{field.description}}
+	</span>
+	{% endif %}
+</div>

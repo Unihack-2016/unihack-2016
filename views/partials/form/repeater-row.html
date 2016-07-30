@@ -1,0 +1,18 @@
+
+
+
+{% for arr in field.fields %}
+
+{% set id = 'repeater' | generateId %}
+<div class="repeater__row" data-id="{{id}}">
+	<div class="repeater__controls" data-id="{{id}}">
+	&nbsp;
+	</div>
+	<div class="form-row" data-id="{{id}}">
+		{% for field in arr %}
+			{% set no_initial_depth = true %}
+			{% include 'partials/form/' + field.type + '.html' %}
+		{% endfor %}
+	</div>
+</div>
+{% endfor %}

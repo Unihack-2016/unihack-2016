@@ -1,0 +1,58 @@
+
+
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="header__inner">
+					<h1 class="header__title">
+						Settings
+					</h1>
+					<span class="header__text">
+						Manage users and change site settings
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="section__inner">
+
+					<!-- Field groups -->
+					<form method="post">
+					<h3>
+					Fields groups
+					</h3>
+
+					{% if fields %}
+						<div class="form-row">
+							{% for field in fields %}
+								{% include 'partials/form/' + field.type + '.html' %}
+							{% endfor %}
+						</div>
+						<input class="hidden" name="id" value="{{id}}">
+						<div class="form-row">
+							<div class="col-4">
+								<input type="submit" value="Update">
+							</div>
+						</div>
+					{% else %}
+					<blockquote class="section__message">
+						No Fields present
+					</blockquote>
+					{% endif %}
+
+					<!-- Field groups END -->
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

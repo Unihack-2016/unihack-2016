@@ -1,0 +1,11 @@
+
+<div class="nav">
+
+	{% for item in nav %}
+	<a class="nav__item {{item.navName}} {% if item.active %}active{% endif %}" href="{{paths.backend}}{{item.slug}}">
+	<div class="item__logo icon-{{item.navName}}"></div>
+	{{item.navName}}
+	</a>
+	{% endfor %}
+
+</div>

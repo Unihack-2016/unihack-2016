@@ -1,0 +1,30 @@
+
+{% set id = 'repeater' | generateId %}
+<div class="col-12">
+	<div class="list" data-depth="{{field.depth}}">
+		<label>
+		{{field.label}}
+		</label>
+		<button class="button button--small button-add-row" type="button" data-id={{id}}>Add row</button>
+
+		<div class="list__row-container" data-id="{{id}}">
+
+			{% for arr in field.fields %}
+			
+			{% set id = 'repeater' | generateId %}
+			<div class="list__row" data-id="{{id}}">
+				<div class="list__controls" data-id="{{id}}">
+				&nbsp;
+				</div>
+				<div class="form-row" data-id="{{id}}">
+					{% for field in arr %}
+						{% set no_initial_depth = true %}
+						{% include 'partials/form/' + field.type + '.html' %}
+					{% endfor %}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</div>

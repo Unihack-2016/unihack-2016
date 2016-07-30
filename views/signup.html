@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+		Backend
+		</title>
+		{% include "partials/head.html" %}
+	</head>
+	<body class="signup">
+		<div class="background">
+		</div>
+
+		<section class="hero">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+					<h1 class="hero__title">
+					Sarad CMS
+					</h1>
+					<h3 class="hero__text">
+					A small, simple CMS for building webapps and more
+					</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" data-model="1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+
+						<div class="section__inner">
+							<h2>
+							Welcome
+							</h2>
+							<p>
+							You have successfully connected the database. All you need to do now is to create a admin account and you're good to go.
+							</p>
+							<h2>
+							Installation guide
+							</h2>
+							<p>
+							We'll need to setup a admin acccount first
+							</p>
+							<form method="post" class="">
+								<div class="form-row">
+									<div class="col-12">
+											<label>
+											 Your Email address
+											</label>
+											<input type="text" name="email">
+											<span class="form-description">
+											We will use this to retrieve your password in case you forget it.
+											</span>
+									</div>
+									<div class="col-12">
+											<label>
+											Your Name
+											</label>
+											<input type="text" name="name">
+									</div>
+									<div class="col-6">
+											<label>
+											Enter a password
+											</label>
+											<input type="text" name="password">
+									</div>
+									<div class="col-6">
+											<label>
+											Verify the password
+											</label>
+											<input type="text" name="password2">
+									</div>
+									<div class="col-4">
+											<input type="submit" value="Create account">
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</body>
+</html>
+

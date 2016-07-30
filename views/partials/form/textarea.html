@@ -1,0 +1,11 @@
+<div class="col-{{field.size}}">
+	<label>
+	{{field.label}}
+	</label>
+	<textarea name="fields[]{{field.depth}}[{{field.name}}]" placeholder="{{field.placeholder}}">{{field.value}}</textarea>
+	{% if field.description %}
+	<span class="form-description">
+	{{field.description}}
+	</span>
+	{% endif %}
+</div>

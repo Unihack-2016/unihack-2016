@@ -1,0 +1,93 @@
+
+
+<div class="header header--left-align">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="header__inner">
+					<h1 class="header__title">
+						Manage {{typeNamePlural | lower}}
+					</h1>
+					<h5 class="header__text">
+						
+					</h5>
+					<button class="header__button" data-toggle="modal" data-target=".bs-example-modal-sm">
+						Add {{typeName | lower}}
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="section__inner">
+					
+					<!-- Table -->
+					<div class="table">
+						
+
+						<div class="table__row table__row--header">
+							<div class="table__cell">
+								ID
+							</div>
+							<div class="table__cell table__cell--align-right">
+								Date Created
+							</div>
+						</div>
+						{% for page in pages %}
+						<a class="table__row" href="{{typeNamePlural | lower}}/{{page._id}}">
+							<div class="table__cell">
+								{{page._id}}
+							</div>
+							<div class="table__cell table__cell--align-right" title="{{page.dateCreated | format('dddd, MMMM Do YYYY, h:mm:ss a')}}">
+								{{page.dateCreated | renderDate}}
+							</div>
+						</a>
+						{% else %}
+						<blockquote class="section__message center">
+							No {{typeNamePlural}} exist. <a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Create one now.</a>
+						</blockquote>
+						{% endfor %}	
+					</div>
+					<!-- Table END -->
+
+					{% include "partials/pagination.html" %}
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <h3>
+      Create page
+      </h3>
+      <form id="addPage" class="form-row" method="post">
+      	{% if typeFields %}
+						{% for field in typeFields %}
+						{{field | dump | safe}}
+							{% include 'partials/form/' + field.type + '.html' %}
+						{% endfor %}
+						<div class="col-4">
+							<input type="submit" value="Create {{typeName}}">
+						</div>
+				{% else %}
+				<blockquote class="section__message">
+					No Fields present
+				</blockquote>
+				{% endif %}
+      </form>
+
+    </div>
+  </div>
+</div>

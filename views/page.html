@@ -1,0 +1,136 @@
+<script>
+var rawTemplate = {{rawTemplate | safe}}
+</script>
+
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="header__inner">
+					<h1 class="header__title">
+						{{page.title}}
+					</h1>
+					<a class="header__text" href="{{paths.host}}/{{page.slug}}" target="_blank">
+						{{paths.host}}/{{page.slug}}
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="section__inner">
+
+					<!-- Field groups -->
+					<form method="post">
+					<h3>
+					Fields groups
+					</h3>
+					{{fields | dump | safe}}
+
+					{% if fields %}
+						<div class="form-row">
+							{% for key, field in fields %}
+								{% include 'partials/form/' + field.type + '.html' %}
+							{% endfor %}
+						</div>
+					{% else %}
+					<blockquote class="section__message">
+						No Fields present
+					</blockquote>
+					{% endif %}
+
+					<!-- Field groups END -->
+					
+
+					<!-- Page settings -->
+					<h3>
+					Page settings
+					</h3>
+
+
+					<div class="form-row">
+
+						<div class="col-12">
+							<label>
+							Page title
+							</label>
+							<input type="text" value="{{page.title}}" name="title">
+						</div>
+
+						<div class="col-6">
+							<label>
+							Page url
+							</label>
+							<input type="text" value="{{page.slug}}" name="slug">
+							<span class="form-description">
+							Important: Changing this will redirect people to a 404 page who use the previous link.
+							</span>
+						</div>
+
+						<div class="col-6">
+							<label>
+							Blueprint
+							</label>
+
+							{% macro options(template, name='') %}
+							{% for template in templates %}
+								<option value={{template.name}} {% if template.name == name %}selected{% endif %}>
+								{{template.name}}
+								</option>
+							{% endfor %}
+							{% endmacro %}
+
+							<select name="template">
+								{{ options(templates, page.template) }}
+							</select>
+							<span class="form-description">
+							</span>
+						</div>
+
+						<div class="col-12">
+							<label>
+							Set as home page?
+							</label>
+
+							<div class="onoffswitch yes-no">
+								<input type="checkbox" name="homepage" class="onoffswitch-checkbox" id="myonoffswitch" value=true {% if page.homepage == 'true' %}checked{% endif %}>
+								<label class="onoffswitch-label" for="myonoffswitch">
+									<span class="onoffswitch-inner"></span>
+									<span class="onoffswitch-switch"></span>
+								</label>
+							</div>
+							<span class="form-description">
+							Setting this as on will remove any other page set as a home page and instead set this one as the home page.
+							</span>
+						</div>
+
+						<div class="col-4">
+							<input type="submit" value="Update settings">
+						</div>
+
+					</div>
+					</form>
+					<!-- Page settings END -->
+
+					<hr>
+
+					<form>
+					<div class="form-row">
+						<div class="col-4">
+							<input type="submit" value="Delete page">
+						</div>
+					</div>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

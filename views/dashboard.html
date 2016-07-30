@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="header__inner">
+					
+					<h1 class="header__title">
+						Dashboard
+					</h1>
+					<h5 class="header__text">
+						Welcome {{user.name}}. Today is {{"" | renderFormattedDate}}
+					</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include "partials/flash.html" %}
+
+<div class="section">
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-9 col-sm-8">
+				<div class="section__inner">				
+				
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-4">
+				<div class="section__sidebar">
+					<h3>
+						Quick links
+					</h3>
+					<button class="button">
+						Change template
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

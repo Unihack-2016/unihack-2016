@@ -1,0 +1,10 @@
+
+{% if pagination.pages > 1 %}
+<div class="pagination">
+{% for i in range(1, pagination.pages + 1) %}
+<a href="{{url}}/pages?page={{i}}" class="pagination__item">
+{{i}}
+</a>
+{% endfor %}
+</div>
+{% endif %}

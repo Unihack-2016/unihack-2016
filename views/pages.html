@@ -1,0 +1,95 @@
+
+
+<div class="header header--left-align">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="header__inner">
+					<h1 class="header__title">
+						Manage pages
+					</h1>
+					<h5 class="header__text">
+						
+					</h5>
+					<button class="header__button" data-toggle="modal" data-target=".bs-example-modal-sm">
+						Add page
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="section__inner">
+					
+					<!-- Table -->
+					<div class="table">
+						<div class="table__row table__row--header">
+							<div class="table__cell">
+								Title
+							</div>
+							<div class="table__cell table__cell--align-right">
+								Slug
+							</div>
+							<div class="table__cell table__cell--align-right">
+								Date Created
+							</div>
+						</div>
+						{% for page in pages %}
+						<a class="table__row" href="pages/{{page._id}}">
+							<div class="table__cell">
+								{{page.title}}
+							</div>
+							<div class="table__cell table__cell--align-right">
+								/{{page.slug}}
+							</div>
+							<div class="table__cell table__cell--align-right">
+								{{page.dateCreated | renderDate}}
+							</div>
+						</a>
+						{% else %}
+						<blockquote class="section__message center">
+							No Pages exist. <a href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Create one now.</a>
+						</blockquote>
+						{% endfor %}	
+					</div>
+					<!-- Table END -->
+
+					{% include "partials/pagination.html" %}
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <h3>
+      Create page
+      </h3>
+      <form id="addPage" class="form-row" method="post">
+      	<div class="col-12">
+      		<label>
+      		Title
+      		</label>
+      		<input type="text" name="title" placeholder="Page title">
+      		<span class="form-description">
+      		</span>
+      	</div>
+      	<div class="col-12">
+      		<input type="submit" value="Create page">
+      	</div>
+      </form>
+
+    </div>
+  </div>
+</div>

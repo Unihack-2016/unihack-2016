@@ -10,7 +10,7 @@ server:
  url : 127.0.0.1
 
 paths:
-  backend: /zzz
+  backend: /backend
 
 db:
  host: localhost
