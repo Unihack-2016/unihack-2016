@@ -1,0 +1,26 @@
+{
+	"dependencies" : {
+		"app.js" : {
+			"files" : [
+				"js/**/*",
+				"js/app.js"
+			],
+			"main" : true
+		},
+		"main.css" : {
+			"files" : [
+				"lightgrid.less"
+			],
+			"main" : true
+		},
+		"templates.js" : {
+			"files" : [
+				"/../views/partials/form/**/*"
+			]
+		}
+	},
+	"paths" : {
+		"source" : "src",
+		"dist" : "public"
+	}
+}

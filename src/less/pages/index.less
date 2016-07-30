@@ -1,0 +1,40 @@
+
+
+body {
+
+	@background-color : rgba(237,233, 227, 0.3);
+
+	.wrapper {
+		position: relative;
+		min-height: 100vh;
+
+		&:after {
+			content:'';
+			position:absolute;
+			z-index: -1;
+			top:0;
+			left:0;
+			width:100%;
+			height:250px;
+			.linear-gradient(180deg, #ECFAFF, fade(@background-color, 10%));
+		}
+	}
+
+	&.admin {
+		min-height:100vh;
+		
+		background-color:@background-color;
+
+		.wrapper {
+			margin-left: 100px;
+		}
+	}
+
+	&.options {
+		.wrapper:after {
+			.linear-gradient(180deg, #FFECF5
+				, fade(@background-color, 10%));
+		}
+	}
+}
+

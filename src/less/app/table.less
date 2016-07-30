@@ -1,0 +1,33 @@
+.table {
+	display: table;
+	width: 100%;
+	background-color: #FFF;
+	&-row {
+		display: table-row;
+
+		&--header {
+			background-color: rgba(0,0,0,0.1);
+			.table-cell {
+				color:#333;
+			}
+		}
+	}
+	&-cell {
+		display: table-cell;
+		padding: 10px;
+
+		font-weight: 700;
+		color:#555;
+
+		&__inner {
+			vertical-align: middle;
+		}
+
+		&--small {
+			width: 48px;
+		}
+		&--right {
+			text-align: right;
+		}
+	}
+}

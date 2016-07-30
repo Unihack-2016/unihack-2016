@@ -1,2 +1,6 @@
 .env
 node_modules
+.idea
+.idea/
+node_modules/
+bower_components/

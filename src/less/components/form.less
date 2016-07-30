@@ -1,0 +1,165 @@
+
+
+.button,
+input[type="submit"] {
+	display: inline-block;
+	border:@color-primary solid 2px;
+	background-color: @color-primary;
+	padding: 5px 10px;
+	color:#FFF;
+	font-weight: @bold;
+	border-radius: 2px;
+
+	&:hover {
+		background-color: lighten(@color-primary, 10%);
+		color:#FFF;
+	}
+
+	&:focus {
+		border-color: @color-secondary;
+		outline: none;
+	}
+
+	&--primary {
+	}
+
+	&--big {
+		padding: 10px 15px;
+		font-size: 1em;
+	}
+
+	&.button--small {
+		width: auto;
+		padding: 3px 10px;
+		border-width: 1px;
+		font-size: 0.8em;
+
+		&:hover {
+			border-color: lighten(@color-primary, 10%);
+		}
+	}
+}
+
+input, textarea {
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	border:#DDD solid 1px;
+	border-radius: 0px;
+
+	border-top: 1px solid lighten(#7c7c7c, 5%);
+	border-left: 1px solid lighten(#c3c3c3, 5%);
+	border-right: 1px solid lighten(#c3c3c3, 5%);
+	border-bottom: 1px solid lighten(#ddd, 5%);
+
+	&:focus {
+		outline: none;
+		border-color: @color-secondary;
+		box-shadow: 0 1px 2px 0 rgba(0,0,0,0.06);
+	}
+}
+
+select {
+	width: 100%;
+	height: auto;
+	padding: 5px;
+	border-bottom: 1px solid lighten(#7c7c7c, 5%);
+	border-left: 1px solid lighten(#c3c3c3, 5%);
+	border-right: 1px solid lighten(#c3c3c3, 5%);
+	border-top: 1px solid lighten(#ddd, 5%);
+
+	&:focus {
+		outline:none;
+		border-color:@focus-color;
+		box-shadow: 0 1px 2px 0 rgba(0,0,0,0.06);
+	}
+}
+
+label {
+	display: inline-block;
+	margin-bottom: 4px;
+
+	font-weight: @bold;
+	color:lighten(@body-font-color, 10%);
+}
+
+.form-group {
+	padding:5px;
+
+	&:hover {
+		background-color: lighten(@color-secondary, 20%);
+	}
+
+	&--blank {
+		margin-top: 20px;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+}
+
+.form-description {
+	display: inline-block;
+	margin-top: 4px;
+
+	font-style: italic;
+	font-size: 0.9em;
+	color:#666;
+}
+
+.repeater {
+	padding: 20px;
+	background-color: rgba(0,0,0,0.015);
+	border-bottom: 1px solid rgba(0,0,0,0.02);
+	border-left: 1px solid rgba(0,0,0,0.04);
+	border-right: 1px solid rgba(0,0,0,0.04);
+	border-top: 1px solid rgba(0,0,0,0.1);
+
+	&__row {
+		position: relative;
+		> .form-row {
+			margin-left: 20px;
+		}
+
+		&-container {
+		}
+	}
+
+	&__controls {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 20px;
+		height: 100%;
+		background-color: @color-primary;
+	}
+}
+
+.list {
+	margin: 10px 0;
+	padding: 20px;
+	background-color: rgba(0,0,0,0.015);
+	border-bottom: 1px solid rgba(0,0,0,0.02);
+	border-left: 1px solid rgba(0,0,0,0.04);
+	border-right: 1px solid rgba(0,0,0,0.04);
+	border-top: 1px solid rgba(0,0,0,0.1);
+
+	&__row {
+		position: relative;
+		> .form-row {
+			margin-left: 20px;
+		}
+
+		&-container {
+		}
+	}
+
+	&__controls {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 20px;
+		height: 100%;
+		background-color: @color-primary;
+	}
+}
