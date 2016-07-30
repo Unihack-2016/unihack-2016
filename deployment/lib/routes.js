@@ -18,7 +18,7 @@
 
 	var router    = express.Router();
 
-	var passport  = require('passport');
+	var passport = require('passport');
 	
 	
 /* ----------------------------------------------------------------
@@ -26,7 +26,7 @@
  * ---------------------------------------------------------------- */
 	module.exports = function(app) {
 
-		require('./passport')(passport, app);
+		require('./../../lib/passport.js')(passport, app);
 
 		// -------- Backend handler -------- //
 		var handler = {
