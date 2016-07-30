@@ -20,7 +20,7 @@
 
 	var passport = require('passport');
 	var db       = require('./../../lib/db.js');
-	var mongoose = require('./node_modules/mongoose');
+	var mongoose = require('mongoose');
 	
 	
 /* ----------------------------------------------------------------
