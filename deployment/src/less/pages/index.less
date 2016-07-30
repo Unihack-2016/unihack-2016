@@ -1,0 +1,159 @@
+
+
+body.index {
+	
+	.banner {
+		min-height: 500px;
+		height: 60vh;
+		position: relative;
+		background-image: url('/img/banner.jpg');
+		background-position: center center;
+		background-size: cover;
+		background-color: #F97A0E;
+		overflow: hidden;
+
+		box-shadow: inset 0 0 128px 1px rgba(0,0,0,0.1);
+
+		&__inner {
+			padding: 100px 0;
+
+			p {
+				display: inline-block;
+				color:#FFF;
+				font-size: 1.6em;
+				font-style: italic;
+				margin: 5px 0;
+				text-shadow:0 1px 1px rgba(0,0,0,0.1);
+			}
+
+			h1 {
+				margin: 0;
+				color:#FFF;
+				font-size: 3.2em;
+				text-transform: uppercase;
+				text-shadow:0 1px 1px rgba(0,0,0,0.1);
+			}
+		}
+
+		> div {
+			position: relative;
+			z-index: 20;
+		}
+
+		&:before {
+			content:'';
+			z-index: 5;
+			position: absolute;
+			top:0px;
+			right: 20%;
+			width: 600px;
+			height: 600px;
+			opacity: 0.4;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.5+0,0+74 */
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 74%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 74%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 74%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+		&:after {
+			content:'';
+			z-index: 10;
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image:url('/img/noise.png');
+			background-repeat: repeat;
+		}
+
+		@media screen and (max-width:@screen-md-min) {
+			height: auto;
+			min-height: 0;
+
+			&__inner {
+				padding-bottom: 50px;
+			}
+		}
+
+	}
+
+	.main {
+		padding: 60px 0;
+		background-color: #F9F6F0;
+		box-shadow: inset 0 8px 32px 1px rgba(0,0,0,0.2);
+
+		&__inner {
+			padding: 40px;
+			background-color: #FFF;
+			border-bottom:#EEE solid 1px;
+		}
+
+		&__sidebar {
+			.sidebar__item {
+				display: block;
+				padding: 10px;
+				font-family: @header-font;
+				text-transform: uppercase;
+				color:#666;
+				border-bottom: #DDD dashed 2px;
+
+				span {
+					display: block;
+					font-family: @body-font;
+					font-size: 0.8em;
+					text-transform: initial;
+					letter-spacing: 1px;
+				}
+
+				&:hover {
+					background-color: #FFF;
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+
+	.unslider {
+		width: 100%;
+		margin: 100px 0;
+		overflow: visible;
+
+		.unslider-arrow,
+		.unslider-nav {
+			display: none;
+		}
+
+		&.unslider-horizontal {
+			box-shadow: 0 2px 4px 1px rgba(0,0,0,0.2);
+		}
+
+		&:after {
+			content:'';
+			position: absolute;
+			bottom:0;
+			left: 0;
+			width: 100%;
+			height: 1px;	
+		}
+
+		li {
+			line-height: 0;
+		}
+
+		&-img {
+			width: 100%;
+			height: 48.2%;
+		}
+
+		@media screen and (max-width:@screen-md-min) {
+			margin-top:10px;
+			margin-bottom: 40px;
+		}
+	}
+
+}

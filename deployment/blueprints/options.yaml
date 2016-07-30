@@ -1,0 +1,7 @@
+
+options: true
+
+fields:
+  footer_list:
+    type: text
+    label: Footer list

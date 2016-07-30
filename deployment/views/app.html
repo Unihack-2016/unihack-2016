@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	{{> head}}
+	
+	<body class="app">
+	
+		{{> app-header}}
+		
+		<div class="wrapper">
+			
+			<div class="image-container__outer">
+				<div class="image-container" data-image="{{imageUrl}}">
+						<img class="main-image">
+						<div class="comment-list">
+						</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+	<!-- Templates -->
+	<script type="text/template" class="template" data-name="comment">
+		<div class="comment" data-x="<%= x %>" data-y="<%= y %>" data-id="<%= id %>">
+			<div class="comment__inner">
+				<div class="comment__header">
+					<div class="comment__avatar" style="background-image:url('http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50');">
+					</div>
+					<h4 class="comment__op">
+						Shashwat Amin
+					</h4>
+				</div>
+				<div class="comment__body">
+					<textarea class="body__textarea" placeholder="Write something.."></textarea>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- Templates END -->
+	
+</html>

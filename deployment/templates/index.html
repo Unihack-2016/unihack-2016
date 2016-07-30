@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href='https://fonts.googleapis.com/css?family=Hind:600,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider.css">
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js"></script>
+<script type="text/javascript">
+;(function() {
+
+	function init() {
+		$('.unslider').unslider({
+			autoplay: true
+		});
+	}
+
+	$(window).ready(init);
+})();
+</script>
+</head>
+<body class="index">
+
+	<section class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="banner__inner">
+						{{fields.banner_description | safe}}
+						<span class="banner__text">
+						Introducing
+						</span>
+						<h1 class="banner__title">
+						Ghostpro
+						</h1>
+						<span class="banner__text">
+						A new content management system for developers.
+						</span>
+						<span class="banner__text banner__text--small">
+						Now at version {{site.version}}
+						</span>
+					</div>
+				</div>
+				<div class="col-md-6">
+				<div class="unslider">
+					<ul>
+						<li>
+							<img class="unslider-img" src="/img/screenshot.png">
+						</li>
+						<li>
+							<img class="unslider-img" src="/img/screenshot2.png">
+						</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-7">
+					<div class="main__inner">
+						<h2>
+						{{globals.page_title}}
+						</h2>
+						<h2>
+						Features
+						</h2>
+						<p>
+						{{fields.page_content}}
+						</p>
+						{{fields.nav | dump | safe}}
+						<ul>
+						{% for item in fields.nav %}
+						<li>
+							{{item.nav_title}}
+							<br>
+							{{item.nav_description}}
+							<ul>
+								{% for item in item.repant %}
+								<li>
+									{{item.last_text}}
+								</li>
+								{% endfor %}
+							</ul>
+						</li>
+						{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-5">
+					<nav class="main__sidebar">
+						<a class="sidebar__item" href="">
+							Github
+							<span>
+							Check out the repo
+							</span>
+						</a>
+						<a class="sidebar__item" href="">
+							Overview
+							<span>
+							How the project is organized
+							</span>
+						</a>
+						<a class="sidebar__item" href="">
+							Best practices
+							<span>
+							Our recommendations
+							</span>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>

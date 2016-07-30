@@ -1,0 +1,42 @@
+.callout {
+	padding: 40px 0;
+	background-color: @color-primary;
+
+	&__face {
+		display: block;
+		width: 64px;
+		height: 64px;
+		margin: 0 auto;
+		margin-top: 28px;
+		&:after {
+			content:'\e902';
+			.icomoon();
+			color:#FFF;
+			font-size: 4em;
+		}
+	}
+
+	&__message {
+		h3, p {
+			font-weight: @bold;
+			color:#FFF;
+		}
+	}
+
+	// -------- Variations -------- //
+	&--sad {
+		background-color: @color-background;
+
+		.callout__face:after {
+			content:'\e905';
+		}
+	}
+	&--happy {
+		background-color: darken(@color-secondary, 10%);
+
+		.callout__face:after {
+			content:'\e903';
+		}
+	}
+	// -------- Variations END -------- //
+}

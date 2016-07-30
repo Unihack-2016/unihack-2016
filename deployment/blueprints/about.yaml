@@ -1,0 +1,18 @@
+template : about
+
+fields:
+  - name: page_title
+    label: Page title
+    type: text
+    description: Page heading title
+
+
+  - name: page_content
+    label: Page content
+    type: text
+    description: Page content
+
+  - name: content_toggle
+    label: Show content?
+    type: toggle
+    size: 2
