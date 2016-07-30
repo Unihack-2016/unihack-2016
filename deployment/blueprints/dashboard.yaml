@@ -1,0 +1,18 @@
+template : dashboard
+
+fields:
+
+  banner_title:
+    type: text
+    label: Banner title
+
+  banner_description:
+    type: texteditor
+    label: Banner textarea
+
+  line:
+    type: line
+
+  main_content:
+    type: texteditor
+    label: Main content

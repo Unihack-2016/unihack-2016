@@ -1,8 +1,8 @@
 
 
 # Server settings
-local: 
- port: 80
+local:
+ port: 8080
  url : localhost
 
 server:

@@ -1,13 +1,13 @@
 template : contact
 
 fields:
-  - name: page_title
+  
+  page_title:
     label: Page title
     type: text
-    description: Page heading title
+    description: Page heading titles
 
-
-  - name: page_content
+  page_content:
     label: Page content
     type: text
     description: Page content
