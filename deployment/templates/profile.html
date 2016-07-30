@@ -1,0 +1,58 @@
+
+<!-- Add a goal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <!-- + {{fields.page_content.name}} ? want the page to be called Goal: goal_name-->
+
+
+</head>
+
+<body>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+        <div class="row">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class ="panel-title">{{user.name}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-5">
+
+                            <ul class="list-group">
+                                <li class="list-group-item">Joined  {{user.date_created}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-7">
+                            <ul>
+                                {% for if goal, goals in user.goals_created %}
+                                <li>{{ goal.title }}: {{ goal.statis }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                                    <!--
+                                    date_created  : Date,
+                                    goals_created : {
+                                        type : Array,
+                                        default : []
+                                    -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+{% include "./partials/footer.html" %}
+
