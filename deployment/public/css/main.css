@@ -1795,6 +1795,51 @@ a {
 .callout--happy .callout__face:after {
   content: '\e903';
 }
+.panel .panel-heading .square {
+  float: left;
+  position: relative;
+  width: 15%;
+  padding-bottom: 15%;
+  /* = width for a 1:1 aspect ratio */
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.panel .panel-heading .img {
+  background-image: url('http://www.dejimachan.org/pb/dev/src/1423562220943.png');
+}
+.panel .panel-body .list-group {
+  padding-left: 0;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 0;
+}
+.panel .panel-body .list-group-item {
+  position: relative;
+  display: block;
+  font-size: 12px;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  font-size: 14px;
+}
+.footer__nav {
+  border-top: #B8B3AF solid 1px;
+  color: #fff;
+  padding: 5px 15px;
+  margin-bottom: 25px;
+}
+.footer__nav .text-left {
+  float: left;
+  display: inline-block;
+}
+.footer__nav .text-right {
+  float: right;
+  display: inline-block;
+}
 /*************** SCROLLBAR BASE CSS ***************/
 .scroll-wrapper {
   overflow: hidden !important;
