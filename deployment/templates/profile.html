@@ -10,51 +10,55 @@
 
 <body>
 
-<script>
 
-</script>
 
 {% include "./partials/nav-bar.html" %}
-<div class="panel-default">
 
-<div class="panel panel-default">
+<div class="main-content">
+<div class="container">
+<div class="row">
+<div class="col-md-5">
+</div>
+    <div class="panel-default">
 
+    <div class="panel panel-default">
+
+    <div class="row">
+
+    <div class="panel panel-default">
     <div class="panel-heading">
+    <div class="square img"></div>
+    <h3 class ="panel-title">{{user.name}}</h3>
+
     </div>
-    <div class="panel">
-        <div class="row">
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="square img"></div>
-                    <h3 class ="panel-title">{{user.name}}</h3>
-
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <ul class="list-group">
-                                <li class="list-group-item">Joined: {{user.date_created}}</li>
-                            </ul>
-                            <ul>
-                                {% for goal, goals in user.goals_created %}
-                                <li>{{ goal.title }}: {{ goal.status }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-
-                                    <!--
-                                    date_created  : Date,
-                                    goals_created : {
-                                        type : Array,
-                                        default : []
-                                    -->
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="panel-body">
+    <div class="row">
+    <div class="col-md-3">
+    <ul class="list-group">
+    <li class="list-group-item">Joined: {{user.date_created}}</li>
+    </ul>
+    <ul>
+    {% for goal, goals in user.goals_created %}
+    <li>{{ goal.title }}: {{ goal.status }}</li>
+    {% endfor %}
+    </ul>
     </div>
+
+    <!--
+    date_created  : Date,
+    goals_created : {
+        type : Array,
+        default : []
+    -->
+    </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+</div>
+</div>
+</div>
 </div>
 
 {% include "./partials/create-goal.html" %}
