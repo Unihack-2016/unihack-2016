@@ -138,7 +138,7 @@
     					throw err;
     				}
 
-    				req.redirect('/');
+    				res.redirect('/');
     			});
 
     		});
@@ -177,7 +177,6 @@
 					if(err) {
 						throw err;
 					}
-
 
 					var goal_comment = new db.goal_comment();
 					var date_created = req.body.date_created;

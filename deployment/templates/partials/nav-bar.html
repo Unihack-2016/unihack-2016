@@ -6,19 +6,18 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="header__nav">
-					<a href="/" class="nav__title">Goalie<a>
+					<a href="/" class="nav__title"><h1>Goalie<h1></h1><a>
 
-						<a class="nav__item" href="/profile"> | My Profile</a>
-
-						<a class="nav__item" href="#" data-toggle="modal" data-target=".bs-example-modal-sm"> | Start Goal</a>
-
-          				{% if user %}
-  						<a href="/profile/{{user._id}}" class="nav__auth">
+						
+          	{% if user %}
+  						<a href="/profile/{{user._id}}" class="nav__item">
   							Welcome {{user.name}}
   						</a>
-         				 {% else %}
-         				   <a href="/auth/facebook">Login</a>
-						 {% endif %}
+
+         		{% else %}
+         			<a href="/auth/facebook" class="nav__item">Login</a>
+						{% endif %}
+						<a class="nav__item" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Start Goal</a>
 				</nav>
 		</div>
 	</div>

@@ -3,10 +3,10 @@
 <!-- Add a goal -->
 <html lang="en">
 <head>
-		<link rel="stylesheet" href="/css/main.css">
-		<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-
-		<script src="/js/all.js"></script>
+	<title>
+	Unihack
+	</title>
+		{% include "./partials/head.html" %}
 </head>
 
 <body class="index">
@@ -31,7 +31,7 @@
 
 			        // unneeded...
 			        win.resize(function(){
-			            var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
+			            var fontSize = Math.max(Math.min(win.width() / (1.25 * 7.5), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
 
 			            foo.css({
 			                fontSize: fontSize * .33 + 'px'
@@ -44,26 +44,20 @@
 		</div>
 		<div class="container">
 			<div class="row">
+				{% for goal in goals %}
 				<div class="col-md-3">
-					<div class="card">
+					<a href="{{paths.siteUrl}}/goal/{{goal._id}}" class="card">
 						<h3 class="card__title">
-							Monday morning fitness class
+							{{goal.title}}
 						</h3>
 						<p class="card__description">
-							Meetup at the Caulfield gym to to burn all those calories.
+							{{goal.description}}
 						</p>
-	        </div>
+	        </a>
 				</div>
-				<div class="col-md-3">
-					<div class="card">
-						<h3 class="card__title">
-							Unihack hackathon
-						</h3>
-						<p class="card__description">
-							Have the guts to make an app in 24 hours? then join us!
-						</p>
-					</div>
-				</div>
+				{% else %}
+				<h2 style="text-align:center;">No goals found. Seems like we're stuck with a bunch of lazy bums.</h2>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
