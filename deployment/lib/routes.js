@@ -133,7 +133,7 @@
     			goal.comment_id = comment_id;
     			goal.author = slug;
 
-    			goal.save(function(err, res) {
+    			goal.save(function(err, result) {
     				if(err) {
     					throw err;
     				}
