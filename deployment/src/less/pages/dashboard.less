@@ -18,6 +18,8 @@
 	border:#EEE solid 1px;
 	border-radius:16px;
   margin-bottom: 20px;
+  height: 220px;
+  overflow-y: auto;
 
   box-shadow: 0px 0px 0px 3px transparent;
 
@@ -40,5 +42,9 @@
 	&:hover, &:active {
 		outline:none;
 		box-shadow: 0px 0px 0px 3px rgb(241,196,15);
+	}
+
+	@media screen and (max-width:@screen-sm-max) {
+		height: auto;
 	}
 }

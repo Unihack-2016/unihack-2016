@@ -1693,6 +1693,8 @@ p {
   border: #EEE solid 1px;
   border-radius: 16px;
   margin-bottom: 20px;
+  height: 220px;
+  overflow-y: auto;
   -webkit-box-shadow: 0px 0px 0px 3px transparent;
           box-shadow: 0px 0px 0px 3px transparent;
   -webkit-transition: all 200ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -1715,6 +1717,11 @@ p {
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 3px #f1c40f;
           box-shadow: 0px 0px 0px 3px #f1c40f;
+}
+@media screen and (max-width: 991px) {
+  .card {
+    height: auto;
+  }
 }
 .header__nav {
   padding: 10px 0;
