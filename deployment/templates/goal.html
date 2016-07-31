@@ -11,38 +11,47 @@
 
 <body class="goal">
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-    </div>
-    <div class="panel-body">
-        <div class="row">
+	{% include "./partials/nav-bar.html" %}
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class ="panel-title">{{goal.name}}</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                        <div class="col-md-8">
-
-                            <ul class="list-group">
-                                <li class="list-group-item">Description: {{goal.description}}</li>
-                                <li class="list-group-item">Time: {{goal.time}}</li>    <!-- need some calc, cur - (start+time) -->
-                                <li class="list-group-item">Bounty: {{goal.bounty}}</li>
-
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="main-content">
+					<div class="main-content__info">
+						<h2>
+						{{goal.title}}
+						</h2>
+						<p>
+						{{goal.description}}
+						</p>
+					</div>
+					<div class="main-content__comments">
+						<h3 class="comments__title">
+						Discussion
+						</h3>
+						{{user}}
+						{% if user.facebook_id %}
+						<form class="comments__form">
+							<textarea name="comment">
+							</textarea>
+							<input type="hidden" value="{{user._id}}" name="user_id">
+							<input type="submit" value="Submit comment">
+						</form>
+						{% endif %}
+						<div class="comments">
+						{% for comment in comments %}
+						<div class="comment">
+							<span class="comment__author">
+							{{comment.author}}
+							</span>
+						</div>
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

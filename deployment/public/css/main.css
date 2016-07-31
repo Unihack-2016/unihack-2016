@@ -1843,10 +1843,6 @@ p {
   font-size: 12px;
 }
 .footer {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
   font-size: 14px;
 }
 .footer__nav {
