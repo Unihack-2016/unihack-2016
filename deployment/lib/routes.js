@@ -39,14 +39,6 @@
 		};
 
 
-		/**
-		 * Renders dashboard
-		 */
-		handler.get.dashboard = function(req, res) {
-			res.send('zz');
-		};
-
-
 		handler.auth = function(req, res, next) {
 			if(req.isAuthenticated()) {
 				return next();
@@ -54,6 +46,17 @@
 				res.sendStatus(401);
 			}
 		}
+
+		handler.setAuth = function(req, res, next) {
+			if(req.isAuthenticated() && req.user.facebook_id) {
+
+				//res.locals.user = req.user;
+			}
+			next();
+		}
+
+
+		app.use(handler.setAuth);
 
 
 		// -------- Backend routes -------- //
@@ -198,10 +201,6 @@
 				});
 			}
     });
-
-		router.route('/settings')
-			.all(handler.auth)
-			.get(handler.get.dashboard);
 		// -------- Backend routes END -------- //
 
 		return router;
