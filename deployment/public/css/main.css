@@ -1677,6 +1677,32 @@ p {
 /*
  * @mixins
  */
+body.goal .main-content {
+  margin: 40px 0;
+  border-radius: 16px;
+  background-color: #FFF;
+}
+body.goal .main-content__info {
+  padding: 20px;
+  border-bottom: #EEE solid 1px;
+}
+body.goal .main-content__comments {
+  padding: 20px;
+}
+body.goal .main-content__comments .comments__form {
+  width: 100%;
+}
+body.goal .main-content__comments .comment {
+  padding: 4px 0;
+  font-family: "Consolas", "Source Code Pro";
+  font-size: 14px;
+}
+body.goal .main-content__comments .comment__author {
+  font-weight: 600;
+}
+body.goal .main-content__comments .comment:hover {
+  background-color: #FFFBE6;
+}
 .main {
   padding: 30px;
 }

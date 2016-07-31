@@ -29,21 +29,33 @@
 						<h3 class="comments__title">
 						Discussion
 						</h3>
-						{{user}}
-						{% if user.facebook_id %}
-						<form class="comments__form">
-							<textarea name="comment">
-							</textarea>
-							<input type="hidden" value="{{user._id}}" name="user_id">
+						{% if user %}
+						<form class="comments__form" method="post">
+							<h4 class="form__title">
+							Add comment
+							</h4>
+							<textarea name="comment"></textarea>
+							<input type="hidden" value="{{user._id}}" name="id">
+							<input type="hidden" value="{{user.name}}" name="name"> 
 							<input type="submit" value="Submit comment">
 						</form>
 						{% endif %}
 						<div class="comments">
-						{% for comment in comments %}
+						{% for comment in comments.comment %}
 						<div class="comment">
+							<span class="comment__date">
+							{{comment.date_created}}
+							</span>
 							<span class="comment__author">
 							{{comment.author}}
+							</span>:
+							<span class="comment__comment">
+							{{comment.comment}}
 							</span>
+						</div>
+						{% else %}
+						<div style="font-style:italic;font-size:18px;">
+						No comments yet
 						</div>
 						{% endfor %}
 						</div>

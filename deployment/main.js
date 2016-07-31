@@ -14,7 +14,7 @@
 	module.exports = function(cms, app, db) {
 
 
-		var routes = require('./lib/routes.js');
+		//var routes = require('./lib/routes.js');
 
 		var goal = {
 
@@ -139,7 +139,7 @@
 		cms.defineType(goal);
 		cms.defineType(goal_comment);
 
-		app.use(routes(app));
+		//app.use(routes(app));
 	}
 
 })();
